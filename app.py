@@ -218,13 +218,13 @@ def answer_question(question: str):
     response = llm.invoke(messages)
 
 # Extract clean text from the response
-answer_text = response.content
-if isinstance(answer_text, list) and len(answer_text) > 0 and 'text' in answer_text[0]:
+    answer_text = response.content
+    if isinstance(answer_text, list) and len(answer_text) > 0 and 'text' in answer_text[0]:
     answer_text = answer_text[0]['text']
-elif not isinstance(answer_text, str):
+    elif not isinstance(answer_text, str):
     answer_text = str(answer_text)
-
-return answer_text, sources
+    
+    return answer_text, sources
 
 
 
